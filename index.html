@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UGC Rate Calculator 2026 | Price Your Content Fairly</title>
+  <meta name="description" content="Calculate fair pricing for your UGC (User-Generated Content) videos in seconds. Take the guesswork out of pricing based on views, niche, platform, and experience level.">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+  <!-- Animated Background -->
+  <div class="bg-mesh">
+    <div class="bg-orb orb-purple"></div>
+    <div class="bg-orb orb-cyan"></div>
+  </div>
+  <div class="bg-particles" id="particles"></div>
+
+  <main class="page-wrapper">
+    <!-- SECTION 1 & 2: HERO & CALCULATOR FORM SPLIT -->
+    <section class="hero-split-section container">
+      <div class="hero-split-grid">
+        <!-- Left Column: Hero Text -->
+        <div class="hero-content">
+          <h1 class="text-gradient">UGC Rate Calculator 2026</h1>
+          <p>Calculate fair pricing for your UGC videos in seconds</p>
+          <a href="#calc-form" class="btn btn-primary btn-pulse desktop-hidden" id="btn-start">
+            Start Calculating
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </a>
+          <div class="trust-badges">
+            <div class="trust-badge">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+              No sign-up
+            </div>
+            <div class="trust-badge">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+              Free
+            </div>
+            <div class="trust-badge">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+              Instant
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Calculator -->
+        <div class="calculator-column" id="calculator">
+          <div class="glass-card calculator-card">
+            <h2>Enter Your Details</h2>
+            <form id="calc-form">
+              <div class="form-grid">
+                <!-- Platform Dropdown -->
+                <div class="form-group">
+                  <label class="form-label" for="platform">Platform</label>
+                  <select id="platform" class="form-control" required>
+                    <option value="tiktok">TikTok</option>
+                    <option value="instagram">Instagram</option>
+                    <option value="youtube">YouTube</option>
+                    <option value="snapchat">Snapchat</option>
+                  </select>
+                </div>
+
+                <!-- Niche Dropdown -->
+                <div class="form-group">
+                  <label class="form-label" for="niche">Niche</label>
+                  <select id="niche" class="form-control" required>
+                    <option value="beauty">Beauty</option>
+                    <option value="fitness">Fitness</option>
+                    <option value="tech">Tech</option>
+                    <option value="finance">Finance</option>
+                    <option value="lifestyle">Lifestyle</option>
+                    <option value="gaming">Gaming</option>
+                    <option value="food">Food</option>
+                    <option value="travel">Travel</option>
+                  </select>
+                </div>
+
+                <!-- Monthly Views -->
+                <div class="form-group form-group-full">
+                  <label class="form-label" for="views">Average Monthly Views</label>
+                  <input type="number" id="views-input" class="form-control" placeholder="50,000" min="1000" max="10000000" value="50000" required>
+                  <input type="range" id="views-slider" min="1000" max="10000000" step="1000" value="50000">
+                  <div class="views-display">
+                    <span>1K</span>
+                    <span>10M+</span>
+                  </div>
+                </div>
+
+                <!-- Experience Level -->
+                <div class="form-group form-group-full">
+                  <label class="form-label">Experience Level</label>
+                  <div class="radio-group">
+                    <label class="radio-label">
+                      <input type="radio" name="experience" value="beginner" required>
+                      <span class="custom-radio"></span>
+                      Beginner (0-6mo)
+                    </label>
+                    <label class="radio-label">
+                      <input type="radio" name="experience" value="intermediate" checked>
+                      <span class="custom-radio"></span>
+                      Intermediate (6-18mo)
+                    </label>
+                    <label class="radio-label">
+                      <input type="radio" name="experience" value="expert">
+                      <span class="custom-radio"></span>
+                      Expert (18mo+)
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Usage Rights -->
+                <div class="form-group form-group-full">
+                  <label class="form-label">Usage Rights Add-ons</label>
+                  <div class="checkbox-group">
+                    <label class="checkbox-label">
+                      <input type="checkbox" id="usage-reuse">
+                      <span class="custom-checkbox"></span>
+                      Brand can reuse (+$25-50)
+                    </label>
+                    <label class="checkbox-label">
+                      <input type="checkbox" id="usage-exclusive">
+                      <span class="custom-checkbox"></span>
+                      Exclusive rights (+$50-100)
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Video Length -->
+                <div class="form-group form-group-full">
+                  <label class="form-label" for="video-length">Video Length</label>
+                  <select id="video-length" class="form-control" required>
+                    <option value="15s">15 seconds</option>
+                    <option value="30s">30 seconds</option>
+                    <option value="60s">60 seconds</option>
+                    <option value="90s">90 seconds</option>
+                  </select>
+                </div>
+                
+                <div class="form-group-full" style="margin-top: 10px;">
+                  <button type="button" id="btn-calculate" class="btn btn-secondary btn-full">
+                    Calculate My Rate
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: RESULT DISPLAY -->
+    <section id="result" class="result-section container">
+      <div class="glass-card result-card">
+        <h2>Your UGC Rate Range</h2>
+        <div class="price-display-box">
+          <div class="main-price text-gradient" id="result-price">$0 - $0 per video</div>
+          <div class="calculation-breakdown" id="result-breakdown">Base: $0 + Usage: $0 + Expert: $0 = $0 (avg)</div>
+        </div>
+        
+        <table class="breakdown-table">
+          <tbody>
+            <tr>
+              <td>📱 Platform</td>
+              <td id="res-platform">TikTok</td>
+            </tr>
+            <tr>
+              <td>👁️ Views</td>
+              <td id="res-views">50K</td>
+            </tr>
+            <tr>
+              <td>💼 Niche</td>
+              <td id="res-niche">Beauty</td>
+            </tr>
+            <tr>
+              <td>⭐ Level</td>
+              <td id="res-level">Intermediate</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="result-ctas">
+          <a href="#outreach" class="btn btn-secondary">
+            📧 Get Outreach Template
+          </a>
+          <a href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+            🔗 Find UGC Brands
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: SEO CONTENT -->
+    <section class="seo-section container">
+      <h2>How UGC Pricing Works in 2026</h2>
+      <div class="info-grid">
+        <div class="glass-card info-card">
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+          </div>
+          <h3>Views Factor</h3>
+          <p>More average views mean higher conversion potential for brands. A creator with 1M views commands a significant premium over one with 10K views, acting as a multiplier on your base rate.</p>
+        </div>
+        <div class="glass-card info-card">
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+          </div>
+          <h3>Niche Factor</h3>
+          <p>High-ROI niches like Finance and Tech pay premium rates because their customer lifetime value is higher. Beauty and Fashion are highly saturated, meaning rates are often closer to the baseline.</p>
+        </div>
+        <div class="glass-card info-card">
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          </div>
+          <h3>Usage Rights Factor</h3>
+          <p>If a brand uses your video in paid ads (whitelisting/dark posting) or demands exclusivity, they must pay for the license. Never give away perpetuity rights without a 50-100% markup.</p>
+        </div>
+      </div>
+
+      <div class="seo-table-container glass-card">
+        <h3>Fair UGC Rates by Platform (Base)</h3>
+        <table class="seo-table">
+          <thead>
+            <tr>
+              <th>Platform</th>
+              <th>Format</th>
+              <th>Average Base Rate (No Ads)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>TikTok</td>
+              <td>Short-form Vertical</td>
+              <td>$50 - $150</td>
+            </tr>
+            <tr>
+              <td>Instagram</td>
+              <td>Reels / Stories</td>
+              <td>$60 - $200</td>
+            </tr>
+            <tr>
+              <td>YouTube</td>
+              <td>Shorts / Dedicated</td>
+              <td>$80 - $300</td>
+            </tr>
+            <tr>
+              <td>Snapchat</td>
+              <td>Spotlight</td>
+              <td>$40 - $100</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="glass-card">
+        <h3>UGC Pricing Tips for 2026</h3>
+        <ul class="tips-list">
+          <li><strong>Never do raw footage for free:</strong> Brands can edit 10 videos from your raw clips. Charge +30% for raw footage.</li>
+          <li><strong>Bundle and save:</strong> Offer 3-video and 5-video packages to increase your Average Order Value (AOV).</li>
+          <li><strong>Negotiate usage terms:</strong> Standard is 90-days paid ad usage. Anything longer should be renewed at 20-30% of the original rate.</li>
+          <li><strong>Hook variations:</strong> Offer 1 video with 3 different hook (first 3 seconds) variations as an easy upsell.</li>
+          <li><strong>Stay updated:</strong> The 2026 algorithm favors authentic, low-production value content over studio setups.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- SECTION 5: FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="adsense-placeholder">
+        AdSense Advertisement (300x250)
+      </div>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <span>|</span>
+        <a href="#">Terms of Service</a>
+        <span>|</span>
+        <a href="#">Contact Us</a>
+      </div>
+      <div class="copyright">
+        &copy; 2026 UGC Rate Calculator. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/calculator.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
